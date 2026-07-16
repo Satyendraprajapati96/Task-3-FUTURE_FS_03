@@ -1,0 +1,40 @@
+/* =========================================================================
+   URBAN SPICE — responsive.css
+   Fine-grained breakpoint tweaks that sit on top of Tailwind's utility
+   classes and style.css. Tailwind handles the majority of responsive
+   layout via its sm:/md:/lg: prefixes directly in the markup; this file
+   covers the handful of cases (fluid type, fixed-position widgets,
+   background attachment) that read better as plain CSS media queries.
+   ========================================================================= */
+
+/* Large desktop refinement */
+@media (min-width: 1536px){
+  .hero h1{ font-size: 5.2rem; }
+}
+
+/* Tablet */
+@media (max-width: 1024px){
+  .hero-bg{ background-attachment: scroll; }
+}
+
+/* Mobile phones */
+@media (max-width: 640px){
+  .fab{ width: 48px; height: 48px; right: 16px; }
+  #whatsapp-fab{ bottom: 84px; }
+  #call-fab{ bottom: 144px; }
+  #back-to-top{ bottom: 20px; }
+  .ticket-card:hover{ transform: none; } /* avoid hover-lift jank on touch */
+  .gallery-item:hover img{ transform: scale(1.06); }
+  #toast{ left: 16px; right: 16px; top: 78px; }
+}
+
+/* Fixed hero background can cause jitter on iOS Safari — disable there */
+@supports (-webkit-touch-callout: none){
+  .hero-bg{ background-attachment: scroll; }
+}
+
+/* Print styles — keep it simple and ink-friendly */
+@media print{
+  #navbar, #loading-screen, #scroll-progress, .fab, #lightbox, .hero-scrim, .hero-grain, #particle-field{ display: none !important; }
+  body{ background: #fff; color: #000; }
+}

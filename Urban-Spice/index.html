@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Spice — Modern Urban Fusion Restaurant | Downtown Fine Dining</title>
+<meta name="description" content="Urban Spice is a modern fusion restaurant serving bold, spice-forward dishes in the heart of downtown. Reserve your table for an unforgettable dining experience.">
+<meta name="keywords" content="Urban Spice, fusion restaurant, fine dining, spice restaurant, best restaurant downtown, book a table, restaurant reservation">
+<meta name="author" content="Urban Spice">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.urbanspice-restaurant.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:title" content="Urban Spice — Where Fire Meets Flavor">
+<meta property="og:description" content="A modern fusion restaurant serving bold, spice-forward dishes in the heart of downtown. Reserve your table today.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:url" content="https://www.urbanspice-restaurant.com/">
+<meta property="og:site_name" content="Urban Spice">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Urban Spice — Where Fire Meets Flavor">
+<meta name="twitter:description" content="Modern fusion restaurant serving bold, spice-forward dishes downtown. Reserve your table today.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80">
+
+<meta name="theme-color" content="#14110F">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.svg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          charcoal: '#14110F',
+          espresso: '#3B2A20',
+          ivory: '#FBF8F2',
+          cream: '#F4EEE1',
+          gold: '#C9A24B',
+          paprika: '#A8412B',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Manrope', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- Structured data for SEO (Restaurant schema) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Urban Spice",
+  "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+  "servesCuisine": ["Fusion", "Contemporary", "Global"],
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "48 Lantern Street, Downtown District",
+    "addressLocality": "Metro City",
+    "postalCode": "10001",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-555-201-4477",
+  "openingHours": ["Mo-Th 12:00-22:30", "Fr-Sa 12:00-23:30", "Su 13:00-21:30"],
+  "url": "https://www.urbanspice-restaurant.com/"
+}
+</script>
+</head>
+
+<body class="font-body antialiased">
+
+<a href="#main" class="skip-link fixed -top-20 left-0 z-[9999] focus:top-0">Skip to content</a>
+
+<!-- ===================== Loading screen ===================== -->
+<div id="loading-screen" class="fixed inset-0 z-[9999] flex items-center justify-center flex-col gap-4 bg-charcoal" aria-hidden="true">
+  <div class="loader-mark">Urban <span class="text-gradient-gold">Spice</span></div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ===================== Scroll progress bar ===================== -->
+<div id="scroll-progress" class="fixed top-0 left-0 h-[3px] w-0 z-[9998]" aria-hidden="true"></div>
+
+<!-- ===================== Toast ===================== -->
+<div id="toast" class="fixed top-[90px] right-6 z-[300] flex items-center gap-3 rounded-xl bg-charcoal text-white px-5 py-4 shadow-2xl" role="status" aria-live="polite">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+  <span>Message sent.</span>
+</div>
+
+<!-- ===================== Navigation ===================== -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50">
+  <nav class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-20" aria-label="Primary">
+    <a href="#home" class="font-display text-2xl tracking-wide flex items-center gap-2">
+      Urban <span class="text-gold">Spice</span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-9 text-sm font-medium">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li class="auth-nav-loggedout"><a href="login.html" class="nav-link">Login</a></li>
+      <li class="auth-nav-loggedout"><a href="register.html" class="nav-link">Register</a></li>
+      <li class="hidden auth-nav-loggedin"><span id="nav-customer-name" class="font-mono text-xs uppercase tracking-wider" style="color:var(--text-muted)"></span></li>
+      <li class="hidden auth-nav-loggedin"><a href="#" class="nav-link js-logout-link">Logout</a></li>
+    </ul>
+
+    <div class="hidden lg:flex items-center gap-4">
+      <button class="theme-toggle w-10 h-10 rounded-full border border-charcoal/15 flex items-center justify-center hover:border-gold transition" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="dark:hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1M12 20v1M4.2 4.2l.7.7M19.1 19.1l.7.7M3 12h1M20 12h1M4.2 19.8l.7-.7M19.1 4.9l.7-.7"/><circle cx="12" cy="12" r="4"/></svg>
+        <svg class="hidden dark:block" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      </button>
+      <a href="#reservation" class="btn btn-primary">Book a Table</a>
+    </div>
+
+    <button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="icon-close" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden lg:hidden flex-col gap-1 px-5 pb-6 bg-ivory dark:bg-[#0F0D0B] border-t border-charcoal/10">
+    <a href="#home" class="nav-link block py-3">Home</a>
+    <a href="#about" class="nav-link block py-3">About</a>
+    <a href="#menu" class="nav-link block py-3">Menu</a>
+    <a href="#gallery" class="nav-link block py-3">Gallery</a>
+    <a href="#testimonials" class="nav-link block py-3">Testimonials</a>
+    <a href="#contact" class="nav-link block py-3">Contact</a>
+    <a href="login.html" class="nav-link block py-3 auth-nav-loggedout">Login</a>
+    <a href="register.html" class="nav-link block py-3 auth-nav-loggedout">Register</a>
+    <a href="#" class="nav-link block py-3 hidden auth-nav-loggedin js-logout-link">Logout</a>
+    <div class="flex items-center justify-between pt-3">
+      <button class="theme-toggle w-10 h-10 rounded-full border border-charcoal/15 flex items-center justify-center" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
+      </button>
+      <a href="#reservation" class="btn btn-primary">Book a Table</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== Hero ===================== -->
+  <section id="home" class="hero relative overflow-hidden">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');" role="img" aria-label="Elegant Urban Spice restaurant dining room lit by candlelight"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-grain"></div>
+    <div id="particle-field" class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pt-24">
+      <p class="eyebrow text-gold mb-6" data-reveal="fade">Downtown · Est. 2011</p>
+      <h1 class="font-display text-white text-5xl sm:text-6xl md:text-7xl leading-[1.05] max-w-3xl" data-reveal>
+        Where Fire Meets <span class="text-gradient-gold italic">Flavor</span>
+      </h1>
+      <p class="text-white/75 text-lg max-w-xl mt-6 leading-relaxed" data-reveal data-reveal-delay="120">
+        Urban Spice blends global spice traditions with modern technique — bold plates, warm hospitality, and a room that feels like it was made for the evening you're about to have.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-9" data-reveal data-reveal-delay="220">
+        <a href="#reservation" class="btn btn-primary">Reserve a Table</a>
+        <a href="#menu" class="btn btn-ghost">View Menu</a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+      <span class="mouse"></span>
+      <span class="eyebrow !text-white/60">Scroll</span>
+    </a>
+  </section>
+
+  <!-- ===================== About ===================== -->
+  <section id="about" class="section-pad bg-ivory dark:bg-[#0F0D0B]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 items-center">
+
+      <div class="relative" data-reveal="left">
+        <div class="rounded-[24px] overflow-hidden shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80"
+               alt="Urban Spice head chef plating a signature dish in the open kitchen" loading="lazy"
+               class="w-full h-[460px] object-cover">
+        </div>
+        <div class="hidden md:block absolute -bottom-8 -right-8 w-56 rounded-2xl overflow-hidden border-8 border-ivory dark:border-[#0F0D0B] shadow-xl">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=500&q=80"
+               alt="Chef searing spices in a cast iron pan" loading="lazy" class="w-full h-40 object-cover">
+        </div>
+      </div>
+
+      <div data-reveal="right">
+        <p class="eyebrow mb-5">Our Story</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight mb-6">Crafting Memorable Dining Experiences Since 2011</h2>
+        <p class="text-text-muted leading-relaxed mb-4" style="color:var(--text-muted)">
+        Our mission hasn't changed: source honestly, season fearlessly, and make every table feel like the best seat in the house. Every dish leaving our kitchen is built on a house-ground spice blend, made fresh each morning.
+        </p>
+        <p class="leading-relaxed mb-8" style="color:var(--text-muted)">
+         More than a restaurant, Urban Spice is a place where families gather, friends celebrate, and every guest is welcomed like family.
+       
+        </p>
+
+        <div class="grid grid-cols-3 gap-6 pt-6 border-t" style="border-color:var(--border)">
+          <div>
+            <div class="stat-number"><span data-counter="4" data-suffix=".9★">0</span></div>
+            <p class="text-xs mt-1 font-mono uppercase tracking-wider" style="color:var(--text-muted)">Google Rating</p>
+          </div>
+          <div>
+            <div class="stat-number"><span data-counter="15" data-suffix="+">0</span></div>
+            <p class="text-xs mt-1 font-mono uppercase tracking-wider" style="color:var(--text-muted)">Years Experience</p>
+          </div>
+          <div>
+            <div class="stat-number"><span data-counter="86" data-suffix="k+">0</span></div>
+            <p class="text-xs mt-1 font-mono uppercase tracking-wider" style="color:var(--text-muted)">Signature Dishes Served</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== Special Menu ===================== -->
+  <section id="menu" class="section-pad bg-cream dark:bg-[#17130F]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-14" data-reveal>
+        <p class="eyebrow justify-center mb-5">The Menu</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">Signature dishes, chef's picks</h2>
+        <p class="mt-4" style="color:var(--text-muted)">A tasting of what leaves our kitchen most — built around house spice blends and seasonal produce.</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 mb-12" data-reveal>
+        <button class="menu-filter-btn active" data-filter="all">All</button>
+        <button class="menu-filter-btn" data-filter="starters">Starters</button>
+        <button class="menu-filter-btn" data-filter="mains">Mains</button>
+        <button class="menu-filter-btn" data-filter="desserts">Desserts</button>
+        <button class="menu-filter-btn" data-filter="drinks">Drinks</button>
+      </div>
+
+      <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Starter -->
+        <article class="ticket-card" data-category="starters" data-reveal="scale">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80" alt="Charred citrus salad with pomegranate and herbs" loading="lazy">
+            <span class="badge badge-veg absolute top-3 left-3">Vegan</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Charred Citrus &amp; Pomegranate Salad</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">Blood orange, fennel, mint, sumac dressing, toasted pistachio.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Small Plate</span><span class="ticket-dots"></span><span class="ticket-price">$14</span></div>
+          </div>
+        </article>
+
+        <!-- Starter spicy -->
+        <article class="ticket-card" data-category="starters" data-reveal="scale" data-reveal-delay="80">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1767974968707-db3d448d4ef3?auto=format&fit=crop&w=700&q=80" alt="Peri-peri grilled prawn skewers" loading="lazy">
+            <span class="badge badge-spicy absolute top-3 left-3">Spicy</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Peri-Peri Prawn Skewers</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">Char-grilled prawns, house peri-peri glaze, lime crema.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Small Plate</span><span class="ticket-dots"></span><span class="ticket-price">$17</span></div>
+          </div>
+        </article>
+
+        <!-- Main chef pick -->
+        <article class="ticket-card" data-category="mains" data-reveal="scale" data-reveal-delay="160">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80" alt="Spice-crusted ribeye steak with roasted vegetables" loading="lazy">
+            <span class="badge badge-chef absolute top-3 left-3">Chef's Pick</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Berbere-Crusted Ribeye</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">28-day aged ribeye, Ethiopian berbere crust, smoked bone jus.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Main</span><span class="ticket-dots"></span><span class="ticket-price">$42</span></div>
+          </div>
+        </article>
+
+        <!-- Main -->
+        <article class="ticket-card" data-category="mains" data-reveal="scale">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80" alt="Spiced coconut curry noodle bowl" loading="lazy">
+            <span class="badge badge-spicy absolute top-3 left-3">Spicy</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Coconut Laksa Noodles</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">Rice noodles, prawn, coconut-chili broth, crispy shallots.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Main</span><span class="ticket-dots"></span><span class="ticket-price">$28</span></div>
+          </div>
+        </article>
+
+        <!-- Main -->
+        <article class="ticket-card" data-category="mains" data-reveal="scale" data-reveal-delay="80">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=700&q=80" alt="Wood-fired flatbread pizza with charred toppings" loading="lazy">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Harissa Lamb Flatbread</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">Wood-fired dough, harissa lamb, whipped feta, mint oil.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Main</span><span class="ticket-dots"></span><span class="ticket-price">$24</span></div>
+          </div>
+        </article>
+
+        <!-- Dessert -->
+        <article class="ticket-card" data-category="desserts" data-reveal="scale" data-reveal-delay="160">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=700&q=80" alt="Cardamom creme brulee dessert" loading="lazy">
+            <span class="badge badge-chef absolute top-3 left-3">Chef's Pick</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Cardamom Crème Brûlée</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">Green cardamom custard, torched sugar, pistachio praline.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Dessert</span><span class="ticket-dots"></span><span class="ticket-price">$12</span></div>
+          </div>
+        </article>
+
+        <!-- Dessert -->
+        <article class="ticket-card" data-category="desserts" data-reveal="scale">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=700&q=80" alt="Dark chocolate chili tart dessert" loading="lazy">
+            <span class="badge badge-spicy absolute top-3 left-3">Spicy</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Ancho Chili Chocolate Tart</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">70% dark chocolate, ancho chili ganache, sea salt crust.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Dessert</span><span class="ticket-dots"></span><span class="ticket-price">$13</span></div>
+          </div>
+        </article>
+
+        <!-- Drink -->
+        <article class="ticket-card" data-category="drinks" data-reveal="scale" data-reveal-delay="80">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=700&q=80" alt="Smoked chili margarita cocktail" loading="lazy">
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Smoked Chili Margarita</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">Reposado tequila, charred lime, chili-salt rim, mezcal float.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Cocktail</span><span class="ticket-dots"></span><span class="ticket-price">$16</span></div>
+          </div>
+        </article>
+
+        <!-- Drink -->
+        <article class="ticket-card" data-category="drinks" data-reveal="scale" data-reveal-delay="160">
+          <div class="ticket-img-wrap relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=700&q=80" alt="Spiced masala chai cocktail" loading="lazy">
+            <span class="badge badge-veg absolute top-3 left-3">Vegan</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-display text-xl mb-2">Masala Chai Old Fashioned</h3>
+            <p class="text-sm mb-4 flex-1" style="color:var(--text-muted)">Bourbon, house chai syrup, orange bitters, star anise.</p>
+            <div class="ticket-line"><span class="text-sm font-medium">Cocktail</span><span class="ticket-dots"></span><span class="ticket-price">$15</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-14" data-reveal>
+        <a href="#reservation" class="btn btn-outline">Reserve to Taste the Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Why Choose Us ===================== -->
+  <section class="section-pad bg-ivory dark:bg-[#0F0D0B]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14" data-reveal>
+        <p class="eyebrow justify-center mb-5">Why Urban Spice</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">Why Guests Choose Urban Spice</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="feature-card" data-reveal data-reveal-delay="0">
+          <div class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-1.5 3-4 5.5-4 9a4 4 0 0 0 8 0c0-3.5-2.5-6-4-9Z"/><path d="M8 21h8"/></svg></div>
+          <h3 class="font-display text-lg mb-2">Freshly Ground Signature Spices</h3>
+          <p class="text-sm" style="color:var(--text-muted)">Every spice blend is roasted and prepared fresh daily to deliver authentic flavor in every bite.</p>
+        </div>
+
+        <div class="feature-card" data-reveal data-reveal-delay="80">
+          <div class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21v-7a8 8 0 0 1 16 0v7"/><path d="M4 21h16"/><circle cx="12" cy="8" r="3"/></svg></div>
+          <h3 class="font-display text-lg mb-2">Expert Culinary Team</h3>
+          <p class="text-sm" style="color:var(--text-muted)">Our experienced chefs combine global inspiration with local ingredients to craft exceptional dishes.</p>
+        </div>
+
+        <div class="feature-card" data-reveal data-reveal-delay="160">
+          <div class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3 class="font-display text-lg mb-2">Attentive, Unhurried Service</h3>
+          <p class="text-sm" style="color:var(--text-muted)">Warm, attentive service that lets you enjoy every moment without feeling rushed.</p>
+        </div>
+
+        <div class="feature-card" data-reveal data-reveal-delay="240">
+          <div class="feature-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 10v10h14V10"/></svg></div>
+          <h3 class="font-display text-lg mb-2">Elegant Dining Ambience</h3>
+          <p class="text-sm" style="color:var(--text-muted)">Designed with warm lighting, refined interiors, and comfortable seating for every occasion.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Gallery ===================== -->
+  <section id="gallery" class="section-pad bg-cream dark:bg-[#17130F]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14" data-reveal>
+        <p class="eyebrow justify-center mb-5">Gallery</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">A look inside the room</h2>
+      </div>
+
+      <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=80" alt="Candlelit dining room at Urban Spice" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">Main Dining Room</span></div>
+        </div>
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale" data-reveal-delay="60">
+          <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=700&q=80" alt="Urban Spice cocktail bar with backlit shelving" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">The Bar</span></div>
+        </div>
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale" data-reveal-delay="120">
+          <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=700&q=80" alt="Chef plating a dish in the open kitchen" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">Open Kitchen</span></div>
+        </div>
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale" data-reveal-delay="180">
+          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=700&q=80" alt="Private dining nook with warm lighting" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">Private Nook</span></div>
+        </div>
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=700&q=80" alt="Signature spice-crusted steak dish plated" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">Signature Plate</span></div>
+        </div>
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale" data-reveal-delay="60">
+          <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=700&q=80" alt="Close up of spices and herbs on preparation table" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">Spice Table</span></div>
+        </div>
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale" data-reveal-delay="120">
+          <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=700&q=80" alt="Outdoor terrace seating in the evening" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">Terrace</span></div>
+        </div>
+        <div class="gallery-item relative overflow-hidden" data-reveal="scale" data-reveal-delay="180">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=700&q=80" alt="Head chef finishing a plate with garnish" loading="lazy">
+          <div class="gallery-overlay"><span class="text-white text-sm font-medium">The Finishing Touch</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[200] flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/80 hover:text-gold" aria-label="Close image preview">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <figure class="text-center">
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-caption" class="text-white/70 text-sm mt-4 font-mono tracking-wide"></figcaption>
+    </figure>
+  </div>
+
+  <!-- ===================== Testimonials ===================== -->
+  <section id="testimonials" class="section-pad bg-charcoal text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[.06] pointer-events-none" style="background-image:radial-gradient(circle,#C9A24B 1px,transparent 1px);background-size:26px 26px;"></div>
+    <div class="max-w-4xl mx-auto px-5 md:px-8 relative">
+      <div class="text-center mb-12" data-reveal>
+        <p class="eyebrow justify-center mb-5">Reviews & Experiences</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">Loved by Our Guests</h2>
+      </div>
+
+      <div class="overflow-hidden" data-reveal="fade">
+        <div id="testimonial-track" class="testimonial-track">
+
+          <div class="testimonial-slide px-2">
+            <div class="glass rounded-3xl p-8 md:p-12 text-center">
+              <div class="flex justify-center gap-1 text-gold mb-5" aria-label="5 out of 5 stars">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              </div>
+              <p class="font-display text-xl md:text-2xl leading-relaxed italic text-white/90 mb-7">"Every course was beautifully presented, and every flavor felt thoughtfully crafted. The warm hospitality made our anniversary truly unforgettable."</p>
+              <img src="https://i.pravatar.cc/80?img=32" alt="Portrait of Amara Whitfield" loading="lazy" class="w-14 h-14 rounded-full object-cover mx-auto mb-3 border-2 border-gold">
+              <p class="font-medium">Amara Whitfield</p>
+              <p class="text-xs text-white/50 font-mono uppercase tracking-wider">Verified Guest</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide px-2">
+            <div class="glass rounded-3xl p-8 md:p-12 text-center">
+              <div class="flex justify-center gap-1 text-gold mb-5" aria-label="5 out of 5 stars">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              </div>
+              <p class="font-display text-xl md:text-2xl leading-relaxed italic text-white/90 mb-7">"One of the finest dining experiences we've had. The flavors were bold, the atmosphere was relaxing, and the staff made us feel genuinely welcome."</p>
+              <img src="https://i.pravatar.cc/80?img=15" alt="Portrait of Daniel Ruiz" loading="lazy" class="w-14 h-14 rounded-full object-cover mx-auto mb-3 border-2 border-gold">
+              <p class="font-medium">Riya Sharma</p>
+              <p class="text-xs text-white/50 font-mono uppercase tracking-wider">Verified Guest</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide px-2">
+            <div class="glass rounded-3xl p-8 md:p-12 text-center">
+              <div class="flex justify-center gap-1 text-gold mb-5" aria-label="5 out of 5 stars">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              </div>
+              <p class="font-display text-xl md:text-2xl leading-relaxed italic text-white/90 mb-7">"Beautiful interiors, attentive staff, and dishes that exceeded every expectation. We'll definitely be back."</p>
+              <img src="https://i.pravatar.cc/80?img=47" alt="Portrait of Priya Nandakumar" loading="lazy" class="w-14 h-14 rounded-full object-cover mx-auto mb-3 border-2 border-gold">
+              <p class="font-medium">Neha Khatun</p>
+              <p class="text-xs text-white/50 font-mono uppercase tracking-wider">Restaurant Critic</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-6 mt-9">
+        <button id="testi-prev" class="w-11 h-11 rounded-full border border-white/25 flex items-center justify-center hover:border-gold hover:text-gold transition" aria-label="Previous testimonial">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div id="testimonial-dots" class="flex items-center gap-2" role="tablist" aria-label="Testimonial selector"></div>
+        <button id="testi-next" class="w-11 h-11 rounded-full border border-white/25 flex items-center justify-center hover:border-gold hover:text-gold transition" aria-label="Next testimonial">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Reservation ===================== -->
+  <section id="reservation" class="section-pad bg-ivory dark:bg-[#0F0D0B]">
+    <div class="max-w-5xl mx-auto px-5 md:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <p class="eyebrow justify-center mb-5">Reservations</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight">Book your table</h2>
+        <p class="mt-4" style="color:var(--text-muted)">Tell us the occasion — we'll take care of the rest. We'll confirm your booking by phone within two hours.</p>
+      </div>
+
+      <form id="reservation-form" novalidate class="grid md:grid-cols-2 gap-6 p-8 md:p-10 rounded-[24px]" style="background:var(--surface);border:1px solid var(--border);box-shadow:var(--card-shadow)" data-reveal="scale">
+
+        <div class="field-wrap">
+          <label for="res-name" class="field-label">Full Name</label>
+          <input id="res-name" name="name" type="text" class="field" placeholder="your Name " required>
+          <p id="res-name-error" class="error-msg" role="alert"></p>
+        </div>
+
+        <div class="field-wrap">
+          <label for="res-phone" class="field-label">Phone Number</label>
+          <input id="res-phone" name="phone" type="tel" class="field" placeholder="+91..." required>
+          <p id="res-phone-error" class="error-msg" role="alert"></p>
+        </div>
+
+        <div class="field-wrap md:col-span-2">
+          <label for="res-email" class="field-label">Email Address</label>
+          <input id="res-email" name="email" type="email" class="field" placeholder="you@example.com" required>
+          <p id="res-email-error" class="error-msg" role="alert"></p>
+        </div>
+
+        <div class="field-wrap">
+          <label for="res-date" class="field-label">Date</label>
+          <input id="res-date" name="date" type="date" class="field" required>
+          <p id="res-date-error" class="error-msg" role="alert"></p>
+        </div>
+
+        <div class="field-wrap">
+          <label for="res-time" class="field-label">Time</label>
+          <select id="res-time" name="time" class="field" required>
+            <option value="">Select a time</option>
+            <option>12:00 PM</option><option>1:00 PM</option><option>6:00 PM</option>
+            <option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option><option>9:00 PM</option>
+          </select>
+          <p id="res-time-error" class="error-msg" role="alert"></p>
+        </div>
+
+        <div class="field-wrap md:col-span-2">
+          <label for="res-guests" class="field-label">Number of Guests</label>
+          <input id="res-guests" name="guests" type="number" min="1" max="12" class="field" placeholder="2" required>
+          <p id="res-guests-error" class="error-msg" role="alert"></p>
+        </div>
+
+        <div class="field-wrap md:col-span-2">
+          <label for="res-special-request" class="field-label">Special Request <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">(optional)</span></label>
+          <textarea id="res-special-request" name="specialRequest" rows="3" maxlength="500" class="field" placeholder="Anniversary, allergy info, seating preference…"></textarea>
+          <p id="res-specialRequest-error" class="error-msg" role="alert"></p>
+        </div>
+
+        <div class="md:col-span-2 flex items-center justify-between flex-wrap gap-4 pt-2">
+          <p class="text-xs font-mono" style="color:var(--text-muted)">* Required fields · Large parties (12+) please call us directly</p>
+          <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section id="contact" class="section-pad bg-cream dark:bg-[#17130F]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14">
+
+      <div data-reveal="left">
+        <p class="eyebrow mb-5">Visit Us</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight mb-8">Join Us for an Unforgettable Evening</h2>
+
+        <ul class="space-y-6 mb-9">
+          <li class="flex gap-4">
+            <span class="feature-icon !mb-0 shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><p class="font-medium">Address</p><p style="color:var(--text-muted)">Urban Spice Restaurant, B-12, Connaught Place, New Delhi, Delhi 110001</p></div>
+          </li>
+          <li class="flex gap-4">
+            <span class="feature-icon !mb-0 shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.9 9.6a16 16 0 0 0 5.5 5.5l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg></span>
+            <div><p class="font-medium">Phone</p><p style="color:var(--text-muted)"><a href="tel:+15552014477" class="hover:text-gold">+91 961-694-3171</a></p></div>
+          </li>
+          <li class="flex gap-4">
+            <span class="feature-icon !mb-0 shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <div><p class="font-medium">Email</p><p style="color:var(--text-muted)"><a href="mailto:hello@urbanspice-restaurant.com" class="hover:text-gold">sp1318216@gmail.com</a></p></div>
+          </li>
+          <li class="flex gap-4">
+            <span class="feature-icon !mb-0 shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div>
+              <p class="font-medium">Opening Hours</p>
+              <p style="color:var(--text-muted)">Mon – Thu: 12:00 PM – 10:30 PM</p>
+              <p style="color:var(--text-muted)">Fri – Sat: 12:00 PM – 11:30 PM</p>
+              <p style="color:var(--text-muted)">Sunday: 1:00 PM – 10:00 PM</p>
+            </div>
+          </li>
+        </ul>
+
+        <a href="https://wa.me/919616943171?text=Hello%20Urban%20Spice!%20I%20would%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener" class="btn btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.9 7.9 0 0 0 4.7 15.8L4 20l4.3-.7a7.9 7.9 0 0 0 11.6-7A7.9 7.9 0 0 0 17.6 6.3Zm-5.5 12a6.6 6.6 0 0 1-3.4-.9l-.24-.15-2.5.4.4-2.4-.16-.25a6.6 6.6 0 1 1 12.3-3.4 6.6 6.6 0 0 1-6.4 6.7Z"/></svg>
+        Reserve via WhatsApp
+        </a>
+      </div>
+
+      <div class="map-frame shadow-xl h-[420px] lg:h-auto" data-reveal="right">
+        <iframe
+          title="Urban Spice location map"
+          src="https://www.google.com/maps?q=Downtown%20District%2C%20Metro%20City&output=embed"
+          width="100%" height="100%" style="border:0;" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="lg:col-span-2" data-reveal="scale">
+        <div class="max-w-2xl">
+          <p class="eyebrow mb-5">Send a Message</p>
+          <h2 class="font-display text-3xl md:text-4xl leading-tight mb-6">Have a question? Write to us</h2>
+        </div>
+        <form id="contact-form" novalidate class="grid md:grid-cols-2 gap-6 p-8 md:p-10 rounded-[24px] max-w-4xl" style="background:var(--surface);border:1px solid var(--border);box-shadow:var(--card-shadow)">
+
+          <div class="field-wrap">
+            <label for="contact-name" class="field-label">Full Name</label>
+            <input id="contact-name" name="name" type="text" class="field" placeholder="Your name" required>
+            <p id="contact-name-error" class="error-msg" role="alert"></p>
+          </div>
+
+          <div class="field-wrap">
+            <label for="contact-email" class="field-label">Email Address</label>
+            <input id="contact-email" name="email" type="email" class="field" placeholder="you@example.com" required>
+            <p id="contact-email-error" class="error-msg" role="alert"></p>
+          </div>
+
+          <div class="field-wrap md:col-span-2">
+            <label for="contact-phone" class="field-label">Phone <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--text-muted)">(optional)</span></label>
+            <input id="contact-phone" name="phone" type="tel" class="field" placeholder="+91 +91 98765 43210">
+            <p id="contact-phone-error" class="error-msg" role="alert"></p>
+          </div>
+
+          <div class="field-wrap md:col-span-2">
+            <label for="contact-message" class="field-label">Message</label>
+            <textarea id="contact-message" name="message" rows="4" maxlength="1000" class="field" placeholder="How can we help?" required></textarea>
+            <p id="contact-message-error" class="error-msg" role="alert"></p>
+          </div>
+
+          <div class="md:col-span-2 flex justify-end pt-2">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="bg-charcoal text-white/80 pt-20 pb-8">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-white/10">
+
+    <div>
+      <p class="font-display text-2xl text-white mb-4">Urban <span class="text-gold">Spice</span></p>
+      <p class="text-sm leading-relaxed mb-6">Experience authentic Indian flavors, handcrafted recipes, and warm hospitality in a refined fine-dining atmosphere.</p>
+      <div class="flex gap-3">
+        <a href="#" aria-label="Urban Spice on Instagram" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Urban Spice on Facebook" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v6h3v-6h3l1-3h-4v-2a1 1 0 0 1 1-1Z"/></svg></a>
+        <a href="#" aria-label="Urban Spice on X" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m4 4 16 16M20 4 4 20"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <p class="eyebrow !text-gold mb-5">Quick Links</p>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#home" class="hover:text-gold transition">Home</a></li>
+        <li><a href="#about" class="hover:text-gold transition">About</a></li>
+        <li><a href="#menu" class="hover:text-gold transition">Menu</a></li>
+        <li><a href="#gallery" class="hover:text-gold transition">Gallery</a></li>
+        <li><a href="#reservation" class="hover:text-gold transition">Reserve a Table</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="eyebrow !text-gold mb-5">Contact</p>
+      <ul class="space-y-3 text-sm">
+        <li>B-12, Connaught Placet, New Delhi, Delhi 110001, India</li>
+        <li><a href="tel:+15552014477" class="hover:text-gold transition">+91 9616943171</a></li>
+        <li><a href="mailto:hello@urbanspice-restaurant.com" class="hover:text-gold transition">sp1318216@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="eyebrow !text-gold mb-5">Newsletter</p>
+      <p class="text-sm mb-4">Subscribe for exclusive offers, seasonal menus, chef's specials, and special dining events.</p>
+      <form id="newsletter-form" class="flex gap-2">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" type="email" required placeholder="you@example.com"
+               class="flex-1 min-w-0 bg-white/5 border border-white/15 rounded-full px-4 py-2.5 text-sm placeholder-white/40 focus:outline-none focus:border-gold">
+        <button type="submit" aria-label="Subscribe" class="w-11 h-11 shrink-0 rounded-full bg-gold text-charcoal flex items-center justify-center hover:brightness-110 transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
+    <p>&copy; <span id="current-year">2026</span> Urban Spice. All rights reserved.</p>
+    <p>Crafted with passion for unforgettable dining experiences.</p>
+  </div>
+</footer>
+
+<!-- ===================== Floating action buttons ===================== -->
+<a id="whatsapp-fab" href="https://wa.me/9616943171" target="_blank" rel="noopener" class="fab fixed right-[22px] bottom-[96px] z-[60]" aria-label="Chat on WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.9 7.9 0 0 0 4.7 15.8L4 20l4.3-.7a7.9 7.9 0 0 0 11.6-7A7.9 7.9 0 0 0 17.6 6.3Zm-5.5 12a6.6 6.6 0 0 1-3.4-.9l-.24-.15-2.5.4.4-2.4-.16-.25a6.6 6.6 0 1 1 12.3-3.4 6.6 6.6 0 0 1-6.4 6.7Z"/></svg>
+</a>
+<a id="call-fab" href="tel:+919616943171" class="fab fixed right-[22px] bottom-[168px] z-[60]" aria-label="Call Urban Spice">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.9 9.6a16 16 0 0 0 5.5 5.5l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>
+</a>
+<button id="back-to-top" class="fab fixed right-[22px] bottom-6 z-[60]" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

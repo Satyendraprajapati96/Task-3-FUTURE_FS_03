@@ -1,0 +1,31 @@
+/* =========================================================================
+   URBAN SPICE — auth.css
+   Styles the new Login / Register pages only. Uses the exact same design
+   tokens (colors, fonts, spacing) already defined in css/style.css — this
+   file is additive and does not modify or override anything used by the
+   existing pages/sections.
+   ========================================================================= */
+
+.login-shell{
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--c-charcoal);
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+.login-shell::before{
+  content:'';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(201,162,75,.10), transparent 55%),
+              radial-gradient(circle at 80% 80%, rgba(168,65,43,.10), transparent 55%);
+}
+.login-card{
+  position: relative;
+  width: 100%; max-width: 440px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 2.6rem 2.2rem;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.5);
+}

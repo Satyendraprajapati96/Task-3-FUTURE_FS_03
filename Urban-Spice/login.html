@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — Urban Spice</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: { extend: {
+      colors: { charcoal:'#14110F', espresso:'#3B2A20', ivory:'#FBF8F2', cream:'#F4EEE1', gold:'#C9A24B', paprika:'#A8412B' },
+      fontFamily: { display:['Fraunces','serif'], body:['Manrope','sans-serif'], mono:['JetBrains Mono','monospace'] }
+    }}
+  }
+</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="font-body antialiased">
+
+<div class="login-shell">
+  <div class="login-card">
+    <a href="index.html" class="text-xs font-mono inline-flex items-center gap-1 mb-6" style="color:var(--text-muted)">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg> Back to Urban Spice
+    </a>
+    <p class="eyebrow mb-4">Urban Spice</p>
+    <h1 class="font-display text-3xl mb-2">Welcome Back</h1>
+    <p class="text-sm mb-8" style="color:var(--text-muted)">Log in to your Urban Spice account.</p>
+
+    <form id="login-form" novalidate>
+      <div class="field-wrap mb-5">
+        <label for="identifier" class="field-label">Email or Username</label>
+        <input id="identifier" name="identifier" type="text" class="field" placeholder="you@example.com" required autocomplete="username">
+        <p id="identifier-error" class="error-msg" role="alert"></p>
+      </div>
+      <div class="field-wrap mb-2">
+        <label for="password" class="field-label">Password</label>
+        <input id="password" name="password" type="password" class="field" placeholder="••••••••" required autocomplete="current-password">
+        <p id="password-error" class="error-msg" role="alert"></p>
+      </div>
+
+      <p id="login-error" class="error-msg mb-4" role="alert"></p>
+
+      <button type="submit" class="btn btn-primary w-full justify-center">Log In</button>
+    </form>
+
+    <p class="text-sm text-center mt-6" style="color:var(--text-muted)">Don't have an account? <a href="register.html" class="text-gold hover:underline">Register</a></p>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

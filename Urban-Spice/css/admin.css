@@ -1,0 +1,189 @@
+/* =========================================================================
+   URBAN SPICE — admin.css
+   Styles specific to the admin dashboard (admin.html). Loaded after
+   style.css and responsive.css, and reuses the same design tokens
+   (--bg, --text, --gold, .btn, .field, etc.) so it matches the public site.
+   ========================================================================= */
+
+/* ---------------------------------------------------------------------
+   Login screen
+   --------------------------------------------------------------------- */
+#admin-login-view{
+  min-height: 100svh;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--c-charcoal);
+  padding: 1.5rem;
+}
+.login-card{
+  width: 100%; max-width: 400px;
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.5);
+}
+
+/* ---------------------------------------------------------------------
+   App shell
+   --------------------------------------------------------------------- */
+#admin-app{ display: none; min-height: 100vh; background: var(--bg); }
+#admin-app.active{ display: flex; }
+
+.admin-sidebar{
+  width: 240px; flex-shrink: 0;
+  background: var(--c-charcoal);
+  color: #fff;
+  display: flex; flex-direction: column;
+  position: sticky; top: 0; height: 100vh;
+}
+.admin-nav-link{
+  display: flex; align-items: center; gap: .75rem;
+  padding: .8rem 1.4rem;
+  color: rgba(255,255,255,.65);
+  font-size: .88rem; font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: all .25s var(--ease);
+}
+.admin-nav-link:hover{ color: #fff; background: rgba(255,255,255,.05); }
+.admin-nav-link.active{ color: var(--c-gold); border-left-color: var(--c-gold); background: rgba(201,162,75,.08); }
+.admin-nav-link svg{ flex-shrink: 0; }
+
+.admin-main{ flex: 1; min-width: 0; padding: 2rem clamp(1.25rem, 3vw, 2.5rem) 4rem; }
+
+.admin-topbar{
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 2rem; gap: 1rem; flex-wrap: wrap;
+}
+
+.admin-view{ display: none; }
+.admin-view.active{ display: block; }
+
+/* ---------------------------------------------------------------------
+   Stat cards
+   --------------------------------------------------------------------- */
+.stat-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+}
+.stat-card .stat-value{
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  color: var(--c-gold);
+  line-height: 1;
+}
+.stat-card .stat-label{
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: .5rem;
+}
+
+/* ---------------------------------------------------------------------
+   Data tables
+   --------------------------------------------------------------------- */
+.admin-table-wrap{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.admin-table{ width: 100%; border-collapse: collapse; font-size: .88rem; }
+.admin-table thead th{
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: .9rem 1rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.admin-table tbody td{
+  padding: .9rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.admin-table tbody tr:last-child td{ border-bottom: none; }
+.admin-table tbody tr:hover{ background: var(--c-gold-soft); }
+
+.status-pill{
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+.status-pending{ background: rgba(201,162,75,.18); color: #a4791f; }
+.status-confirmed{ background: rgba(88,120,79,.18); color: #3f6b37; }
+.status-cancelled{ background: rgba(168,65,43,.18); color: var(--c-paprika); }
+.status-completed{ background: rgba(20,17,15,.1); color: var(--text-muted); }
+html.dark .status-pending{ color: #e0c27f; }
+html.dark .status-confirmed{ color: #93c489; }
+html.dark .status-completed{ color: var(--text); }
+
+.icon-btn{
+  width: 34px; height: 34px; border-radius: 8px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all .2s var(--ease);
+}
+.icon-btn:hover{ border-color: var(--c-paprika); color: var(--c-paprika); }
+
+.status-select{
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  padding: .35rem .5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* ---------------------------------------------------------------------
+   Filter bar
+   --------------------------------------------------------------------- */
+.admin-filter-bar{
+  display: flex; flex-wrap: wrap; gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+.admin-filter-bar .field{ padding: .65rem .9rem; font-size: .85rem; }
+.admin-filter-bar input[type="text"]{ min-width: 220px; }
+
+/* ---------------------------------------------------------------------
+   Empty / loading states
+   --------------------------------------------------------------------- */
+.admin-empty{
+  text-align: center; padding: 3rem 1.5rem;
+  color: var(--text-muted);
+}
+.admin-loading-row td{ text-align: center; padding: 2rem !important; color: var(--text-muted); }
+
+/* ---------------------------------------------------------------------
+   Pagination
+   --------------------------------------------------------------------- */
+.admin-pagination{
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  padding: 1rem;
+}
+
+/* ---------------------------------------------------------------------
+   Mobile
+   --------------------------------------------------------------------- */
+@media (max-width: 900px){
+  #admin-app.active{ flex-direction: column; }
+  .admin-sidebar{ width: 100%; height: auto; position: static; flex-direction: row; overflow-x: auto; }
+  .admin-nav-link{ border-left: none; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .admin-nav-link.active{ border-left-color: transparent; border-bottom-color: var(--c-gold); }
+  .admin-table-wrap{ overflow-x: auto; }
+  .admin-table{ min-width: 720px; }
+}
